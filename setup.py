@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8  -*-
+# -*- coding: utf-8; -*-
 ################################################################################
 #
 #  sqlalchemy-pervasive -- SQLAlchemy Dialect for Pervasive PSQL
-#  Copyright © 2013 Sacramento Natural Foods Co-op, Inc
+#  Copyright © 2013-2018 Sacramento Natural Foods Co-op, Inc
 #
 #  This file is part of sqlalchemy-pervasive.
 #
@@ -22,13 +21,14 @@
 #
 ################################################################################
 
+from __future__ import unicode_literals, absolute_import
 
 import os.path
 from setuptools import setup, find_packages
 
 
 here = os.path.abspath(os.path.dirname(__file__))
-execfile(os.path.join(here, 'sqlalchemy_pervasive', '_version.py'))
+exec(open(os.path.join(here, 'sqlalchemy_pervasive', '_version.py')).read())
 
 README = open(os.path.join(here, 'README.rst')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()
