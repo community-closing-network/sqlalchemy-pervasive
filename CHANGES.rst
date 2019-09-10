@@ -1,3 +1,8 @@
+0.1.3
+-----
+
+* Updated to work with python3
+
 
 0.1.2
 -----
