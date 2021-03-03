@@ -2,7 +2,7 @@
 ################################################################################
 #
 #  sqlalchemy-pervasive -- SQLAlchemy Dialect for Pervasive PSQL
-#  Copyright © 2013-2018 Sacramento Natural Foods Co-op, Inc
+#  Copyright © 2013-2021 Sacramento Natural Foods Co-op, Inc
 #
 #  This file is part of sqlalchemy-pervasive.
 #
@@ -21,10 +21,14 @@
 #
 ################################################################################
 
-from __future__ import unicode_literals, absolute_import
-
+import os
 import shutil
+
 from invoke import task
+
+
+here = os.path.abspath(os.path.dirname(__file__))
+exec(open(os.path.join(here, 'sqlalchemy_pervasive', '_version.py')).read())
 
 
 @task
@@ -33,4 +37,5 @@ def release(ctx):
     Release a new version of 'sqlalchemy-pervasive'.
     """
     shutil.rmtree('sqlalchemy_pervasive.egg-info')
-    ctx.run('python setup.py sdist --formats=gztar upload')
+    ctx.run('python setup.py sdist --formats=gztar')
+    ctx.run('twine upload dist/sqlalchemy-pervasive-{}.tar.gz'.format(__version__))

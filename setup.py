@@ -2,7 +2,7 @@
 ################################################################################
 #
 #  sqlalchemy-pervasive -- SQLAlchemy Dialect for Pervasive PSQL
-#  Copyright © 2013-2018 Sacramento Natural Foods Co-op, Inc
+#  Copyright © 2013-2021 Sacramento Natural Foods Co-op, Inc
 #
 #  This file is part of sqlalchemy-pervasive.
 #
@@ -20,8 +20,6 @@
 #  sqlalchemy-pervasive.  If not, see <http://www.gnu.org/licenses/>.
 #
 ################################################################################
-
-from __future__ import unicode_literals, absolute_import
 
 import os.path
 from setuptools import setup, find_packages
@@ -79,16 +77,15 @@ setup(
     long_description = README + '\n\n' +  CHANGES,
 
     classifiers = [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         'Natural Language :: English',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        ],
+    ],
 
     install_requires = requires,
     packages = find_packages(exclude=['tests']),
