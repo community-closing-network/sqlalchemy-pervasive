@@ -26,11 +26,7 @@ from setuptools import setup, find_packages
 
 
 here = os.path.abspath(os.path.dirname(__file__))
-<<<<<<< HEAD
-exec(compile(open(os.path.join(here, 'sqlalchemy_pervasive', '_version.py')).read(), os.path.join(here, 'sqlalchemy_pervasive', '_version.py'), 'exec'))
-=======
 exec(open(os.path.join(here, 'sqlalchemy_pervasive', '_version.py')).read())
->>>>>>> 3c1928b5b5693898f30e8b6e0ae4e6f57a5bf941
 
 README = open(os.path.join(here, 'README.rst')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()
