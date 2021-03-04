@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8  -*-
+# -*- coding: utf-8; -*-
 ################################################################################
 #
 #  sqlalchemy-pervasive -- SQLAlchemy Dialect for Pervasive PSQL
-#  Copyright © 2013 Sacramento Natural Foods Co-op, Inc
+#  Copyright © 2013-2021 Sacramento Natural Foods Co-op, Inc
 #
 #  This file is part of sqlalchemy-pervasive.
 #
@@ -22,16 +21,21 @@
 #
 ################################################################################
 
-
+import os
 import shutil
-from fabric.api import task, local
+
+from invoke import task
+
+
+here = os.path.abspath(os.path.dirname(__file__))
+exec(open(os.path.join(here, 'sqlalchemy_pervasive', '_version.py')).read())
 
 
 @task
-def release():
+def release(ctx):
     """
     Release a new version of 'sqlalchemy-pervasive'.
     """
-
     shutil.rmtree('sqlalchemy_pervasive.egg-info')
-    local('python setup.py sdist --formats=gztar register upload')
+    ctx.run('python setup.py sdist --formats=gztar')
+    ctx.run('twine upload dist/sqlalchemy-pervasive-{}.tar.gz'.format(__version__))

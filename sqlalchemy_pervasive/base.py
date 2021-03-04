@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8  -*-
+# -*- coding: utf-8; -*-
 ################################################################################
 #
 #  sqlalchemy-pervasive -- SQLAlchemy Dialect for Pervasive PSQL
-#  Copyright © 2013 Sacramento Natural Foods Co-op, Inc
+#  Copyright © 2013-2021 Sacramento Natural Foods Co-op, Inc
 #
 #  This file is part of sqlalchemy-pervasive.
 #
@@ -21,7 +20,6 @@
 #  sqlalchemy-pervasive.  If not, see <http://www.gnu.org/licenses/>.
 #
 ################################################################################
-
 """
 Support for the Pervasive PSQL database engine.
 """

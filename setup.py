@@ -1,9 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8  -*-
+# -*- coding: utf-8; -*-
 ################################################################################
 #
 #  sqlalchemy-pervasive -- SQLAlchemy Dialect for Pervasive PSQL
-#  Copyright © 2013 Sacramento Natural Foods Co-op, Inc
+#  Copyright © 2013-2021 Sacramento Natural Foods Co-op, Inc
 #
 #  This file is part of sqlalchemy-pervasive.
 #
@@ -22,13 +21,16 @@
 #
 ################################################################################
 
-
 import os.path
 from setuptools import setup, find_packages
 
 
 here = os.path.abspath(os.path.dirname(__file__))
+<<<<<<< HEAD
 exec(compile(open(os.path.join(here, 'sqlalchemy_pervasive', '_version.py')).read(), os.path.join(here, 'sqlalchemy_pervasive', '_version.py'), 'exec'))
+=======
+exec(open(os.path.join(here, 'sqlalchemy_pervasive', '_version.py')).read())
+>>>>>>> 3c1928b5b5693898f30e8b6e0ae4e6f57a5bf941
 
 README = open(os.path.join(here, 'README.rst')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()
@@ -71,15 +73,15 @@ requires = [
 setup(
     name = "sqlalchemy-pervasive",
     version = __version__,
-    author = "Sacramento Natural Foods Co-op, Inc",
-    author_email = "developer@sacfoodcoop.com",
-    url = 'https://github.com/SacNaturalFoods/sqlalchemy-pervasive',
+    author = "Lance Edgar",
+    author_email = "lance@edbob.org",
+    url = 'https://kallithea.rattailproject.org/rattail-project-contrib/sqlalchemy-pervasive',
     license = "GNU GPL v3",
     description = "SQLAlchemy Dialect for Pervasive PSQL",
     long_description = README + '\n\n' +  CHANGES,
 
     classifiers = [
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         'Natural Language :: English',
@@ -87,7 +89,7 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        ],
+    ],
 
     install_requires = requires,
     packages = find_packages(exclude=['tests']),
