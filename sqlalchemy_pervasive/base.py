@@ -34,7 +34,7 @@ class PervasiveCompiler(SQLCompiler):
     Custom SQL statement compiler for Pervasive PSQL.
     """
 
-    def get_select_precolumns(self, select):
+    def get_select_precolumns(self, select, **kwargs):
         # This logic was copied from the ``sqlalchemy-access`` dialect.
         s = 'DISTINCT ' if select._distinct else ''
         if select._limit:
